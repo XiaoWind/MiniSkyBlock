@@ -1,0 +1,33 @@
+{
+  "parent": "skyblock:progression/wandering_trader",
+  "display": {
+    "icon": {
+      "id": "minecraft:cactus"
+    },
+    "title": {
+      "translate": "Hump Day Trader"
+    },
+    "description": {
+      "translate": "Find and ride a Camel"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "ride_camel": {
+      "trigger": "minecraft:started_riding",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "minecraft:entity_type": "minecraft:camel"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

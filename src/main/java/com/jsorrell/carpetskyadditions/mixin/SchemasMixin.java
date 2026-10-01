@@ -1,0 +1,43 @@
+package com.jsorrell.carpetskyadditions.mixin;
+
+import com.jsorrell.carpetskyadditions.datafix.SkyBlockGeneratorNameFix;
+import com.jsorrell.carpetskyadditions.datafix.SkyBlockGeneratorNameFix2;
+import com.jsorrell.carpetskyadditions.datafix.schemas.V3079;
+import com.jsorrell.carpetskyadditions.datafix.schemas.V3106;
+import com.mojang.datafixers.DataFixerBuilder;
+import com.mojang.datafixers.schemas.Schema;
+import net.minecraft.util.datafix.DataFixers;
+import net.minecraft.util.filefix.FileFixerUpper;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+@Mixin(DataFixers.class)
+public abstract class SchemasMixin {
+    @Inject(
+        method = "addFixers",
+        at = @At(
+            value = "INVOKE",
+            target = "Lcom/mojang/datafixers/DataFixerBuilder;addFixer(Lcom/mojang/datafixers/DataFix;)V",
+            ordinal = 230, // before AddNewChoices(v3081, "Added Warden")
+            remap = false))
+    private static void addSkyBlockGeneratorNameFix(
+        DataFixerBuilder fixerUpper, FileFixerUpper.Builder fileFixerUpper, CallbackInfo ci) {
+        Schema schema3079 = fixerUpper.addSchema(3079, 1, V3079::new);
+        fixerUpper.addFixer(new SkyBlockGeneratorNameFix(schema3079));
+    }
+
+    @Inject(
+        method = "addFixers",
+        at = @At(
+            value = "INVOKE",
+            target = "Lcom/mojang/datafixers/DataFixerBuilder;addFixer(Lcom/mojang/datafixers/DataFix;)V",
+            ordinal = 245, // before BlendingDataRemoveFromNetherEndFix(v3108)
+            remap = false))
+    private static void addSkyBlockGeneratorNameFix2(
+        DataFixerBuilder builder, FileFixerUpper.Builder fileFixerUpper, CallbackInfo ci) {
+        Schema schema3106 = builder.addSchema(3106, V3106::new);
+        builder.addFixer(new SkyBlockGeneratorNameFix2(schema3106));
+    }
+}

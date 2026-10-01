@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "miniskyblock",
+  "version": "${version}",
+  "name": "${name}",
+  "description": "Empty world generation with new ways to obtain resources",
+  "authors": [
+    "jsorrell"
+  ],
+  "contact": {
+    "homepage": "https://github.com/jsorrell/CarpetSkyAdditions",
+    "sources": "https://github.com/jsorrell/CarpetSkyAdditions",
+    "issues": "https://github.com/jsorrell/CarpetSkyAdditions/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/miniskyblock/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.jsorrell.carpetskyadditions.SkyAdditionsExtension"
+    ]
+  },
+  "mixins": [
+    "miniskyblock.mixins.json"
+  ],
+  "accessWidener": "miniskyblock.accesswidener",
+  "depends": {
+    "fabricloader": "*",
+    "minecraft": "${mc_compatibility}",
+    "carpet": "*",
+    "fabric-object-builder-api-v1": "*",
+    "fabric-registry-sync-v0": "*",
+    "fabric-resource-loader-v0": "*",
+    "fabric-transitive-access-wideners-v1": "*"
+  }
+}

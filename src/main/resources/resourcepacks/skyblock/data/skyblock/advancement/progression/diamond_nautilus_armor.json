@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:diamond_nautilus_armor"
+    },
+    "title": {
+      "translate": "Shell Yeah"
+    },
+    "description": {
+      "translate": "Craft Diamond Nautilus Armor"
+    },
+    "frame": "challenge"
+  },
+  "parent": "skyblock:progression/diamond",
+  "criteria": {
+    "has_nautilus_horse_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:diamond_nautilus_armor"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "dimensions": {
+    "minecraft:overworld": {
+      "type": "minecraft:overworld",
+      "generator": {
+        "type": "miniskyblock:skyblock",
+        "biome_source": {
+          "type": "miniskyblock:skyblock_biomes",
+          "biomes": [
+            "minecraft:beach",
+            "minecraft:snowy_taiga",
+            "minecraft:plains",
+            "minecraft:jungle",
+            "minecraft:warm_ocean"
+          ],
+          "grid_size": 30
+        },
+        "settings": "minecraft:overworld"
+      }
+    },
+    "minecraft:the_nether": {
+      "type": "minecraft:the_nether",
+      "generator": {
+        "type": "miniskyblock:skyblock",
+        "biome_source": {
+          "type": "miniskyblock:skyblock_biomes",
+          "biomes": [
+            "minecraft:nether_wastes",
+            "minecraft:soul_sand_valley",
+            "minecraft:crimson_forest",
+            "minecraft:warped_forest",
+            "minecraft:basalt_deltas"
+          ],
+          "grid_size": 30
+        },
+        "settings": "minecraft:nether"
+      }
+    },
+    "minecraft:the_end": {
+      "type": "minecraft:the_end",
+      "generator": {
+        "type": "miniskyblock:skyblock",
+        "biome_source": {
+          "type": "minecraft:the_end"
+        },
+        "settings": "minecraft:end"
+      }
+    }
+  }
+}

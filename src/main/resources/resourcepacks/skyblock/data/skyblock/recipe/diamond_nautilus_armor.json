@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "XXX",
+    "XYX",
+    "XXX"
+  ],
+  "key": {
+    "X": "minecraft:diamond",
+    "Y": "minecraft:nautilus_shell"
+  },
+  "result": {
+    "id": "minecraft:diamond_nautilus_armor",
+    "count": 1
+  }
+}
